@@ -40,11 +40,11 @@ build-cuda:
 	docker build . --file gpu.Dockerfile --tag $(CUDA_IMAGE)
 
 build-images: build-cuda
-	docker build . -t $(IMAGE):$(VERSION)-facenet
-	docker build . -t $(IMAGE):$(VERSION)-mobilenet $(MOBILENET_BUILD_ARGS)
-	docker build . -t $(IMAGE):$(VERSION)-mobilenet-gpu $(MOBILENET_BUILD_ARGS) --build-arg GPU_IDX=0 --build-arg BASE_IMAGE=$(CUDA_IMAGE)
-	# docker build . -t $(IMAGE):$(VERSION)-arcface-r100 $(ARCFACE_r100_BUILD_ARGS)
-	# docker build . -t $(IMAGE):$(VERSION)-arcface-r100-gpu $(ARCFACE_r100_BUILD_ARGS) --build-arg GPU_IDX=0 --build-arg BASE_IMAGE=$(CUDA_IMAGE)
+	# docker build . -t $(IMAGE):$(VERSION)-facenet
+	# docker build . -t $(IMAGE):$(VERSION)-mobilenet $(MOBILENET_BUILD_ARGS)
+	# docker build . -t $(IMAGE):$(VERSION)-mobilenet-gpu $(MOBILENET_BUILD_ARGS) --build-arg GPU_IDX=0 --build-arg BASE_IMAGE=$(CUDA_IMAGE)
+	docker build . -t $(IMAGE):$(VERSION)-arcface-r100 $(ARCFACE_r100_BUILD_ARGS)
+	docker build . -t $(IMAGE):$(VERSION)-arcface-r100-gpu $(ARCFACE_r100_BUILD_ARGS) --build-arg GPU_IDX=0 --build-arg BASE_IMAGE=$(CUDA_IMAGE)
 
 build-images-cpu:
 	docker build . -t $(IMAGE):$(VERSION)-facenet
