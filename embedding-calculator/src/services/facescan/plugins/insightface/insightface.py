@@ -61,7 +61,7 @@ class FaceDetector(InsightFaceMixin, mixins.FaceDetectorMixin, base.BasePlugin):
     ml_models = (
         ('retinaface_mnet025_v1', '1ggNFFqpe0abWz6V1A82rnxD6fyxB8W2c'),
         ('retinaface_mnet025_v2', '1EYTMxgcNdlvoL1fSC8N1zkaWrX75ZoNL'),
-        ('retinaface_r50_v1', '1hvEv4xZP-_50cO7IYkH6sDUb_SC92wut'),
+        ('retinaface_r50_v1', '14WxfYlzXzZ1qI1n8AAsjGBG4wCZ1MuIQ'),
     )
 
     IMG_LENGTH_LIMIT = ENV.IMG_LENGTH_LIMIT
